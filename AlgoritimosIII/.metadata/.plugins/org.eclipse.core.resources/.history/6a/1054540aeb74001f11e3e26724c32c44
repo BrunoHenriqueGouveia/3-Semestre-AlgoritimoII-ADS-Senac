@@ -1,0 +1,15 @@
+package Aula9Excecoes.Trows;
+
+public class IdadeInvalidaException  extends Exception{
+	public IdadeInvalidaException(String mensagem) {
+		super(mensagem);
+		print();
+	}
+	
+	public void print() {
+		System.out.println("==Idade invalida Exception==");
+		System.out.println(getMessage());
+		System.out.println("==idade Invalida Exception==");
+	}
+
+}

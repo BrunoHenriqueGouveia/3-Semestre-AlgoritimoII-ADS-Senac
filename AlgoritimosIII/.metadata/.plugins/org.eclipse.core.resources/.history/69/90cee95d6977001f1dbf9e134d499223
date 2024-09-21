@@ -1,0 +1,66 @@
+package Aula9Interfaceis;
+
+import java.awt.*;
+import javax.swing.*;
+
+public class Ex2 extends JFrame {
+
+	JLabel lblTitulo,lblNome, lblTelefone, lblCpf, lblEmail;
+	JTextField txtNome, txtTelefone, txtCpf, txtEmail;
+	JButton bGravar, bSair;
+
+	public Ex2() {
+		TesteJFrame modelo = new TesteJFrame();
+
+		setTitle("Cadastro");// Titulo da janela
+		setSize(375, 500);// tamanho da janela larg, alt
+		getContentPane().setLayout(null); // anula layout padrao
+
+		// cor de fundo da janela RGB (Red Green Blue)
+		getContentPane().setBackground(new Color(255, 255, 217));
+
+		// provoca o termino da execução (encerra o programa)
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		lblTitulo = modelo.criarJLabel("Cadastrar", 137, 0);
+		add(lblTitulo);
+		
+		lblNome = modelo.criarJLabel("Nome:", 10, 50);
+		add(lblNome);
+
+		txtNome = modelo.CriarTxt(70, 60);
+		add(txtNome);
+		
+		lblCpf = modelo.criarJLabel("CPF:", 10, 80);
+		add(lblCpf);
+
+		txtCpf = modelo.CriarTxt(70, 90);
+		add(txtCpf);
+		
+		lblTelefone = modelo.criarJLabel("fone:", 10, 110);
+		add(lblTelefone);
+
+		txtTelefone = modelo.CriarTxt(70, 120);
+		add(txtTelefone);
+		
+		lblEmail = modelo.criarJLabel("Email:", 10, 140);
+		add(lblEmail);
+
+		txtEmail = modelo.CriarTxt(70, 150);
+		add(txtEmail);
+		
+		bGravar = modelo.Criarbutao("Gravar", 'G', 80, 275, 100, 40);
+	    add(bGravar);
+	    
+	    bSair = modelo.Criarbutao("Sair", 'S', 200, 275, 100, 40);
+	    add(bSair); 
+		
+		setLocationRelativeTo(null);
+		setVisible(true);
+	}
+
+	public static void main(String[] args) {
+		new Ex2();
+	}
+
+}

@@ -1,0 +1,13 @@
+package Aula9Excecoes.Trows;
+
+public class TesteIdade {
+	public static void main(String[] args) throws IdadeInvalidaException {
+		String nome = "Joao";
+		byte idade = -1;
+		try {
+			Pessoa p = new Pessoa(nome, idade);
+		} catch (IdadeInvalidaException e) {
+			e.printStackTrace();
+		}
+	}
+}

@@ -1,0 +1,39 @@
+package Aula9Colecoes;
+
+public class VetorPessoa {
+	private String vetorPessoa[];
+	private int tamanho;
+
+	public VetorPessoa() {
+		this.vetorPessoa = new String[20];
+		this.tamanho = 0;
+	}
+
+	// Método para adicionar uma conta ao vetor
+	public void adiciona(String elemento){
+
+		this.aumentaCapacidade();
+
+		if (this.tamanho < this.vetorPessoa.length) {
+			this.vetorPessoa[this.tamanho] = elemento;
+			this.tamanho++;
+
+		} 
+
+	}
+
+	// Aumenta a capacidade do vetor de contas se ele estiver cheio
+	public void aumentaCapacidade() {
+
+		if (this.vetorPessoa.length == this.tamanho) {
+			String[] elementosNovos = new String[this.vetorPessoa.length * 2];
+
+			for (int i = 0; i < this.vetorContas.length; i++) {
+				elementosNovos[i] = this.vetorContas[i];
+			}
+
+			this.vetorContas = elementosNovos;
+		}
+	}
+
+}

@@ -1,0 +1,32 @@
+package Aula9Interfaceis;
+
+import java.awt.*;
+import javax.swing.*;
+
+public class Ex2 extends JFrame {
+
+	JLabel lblNome, lblTelefone, lblCpf, lblEmail;
+	JTextField txtNome, txtTelefone, txtCpf, txtEmail;
+	JButton bGravar, bSair;
+
+	public Ex2() {
+		TesteJFrame modelo = new TesteJFrame();
+
+		setTitle("Cadastro");// Titulo da janela
+		setSize(375, 500);// tamanho da janela larg, alt
+		getContentPane().setLayout(null); // anula layout padrao
+
+		// cor de fundo da janela RGB (Red Green Blue)
+		Color cor = JColorChooser.showDialog(null, "Escolha a cor de tela de fundo", getBackground());
+		getContentPane().setBackground(cor);
+
+		// provoca o termino da execução (encerra o programa)
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+	}
+
+	public static void main(String[] args) {
+		new Ex2();
+	}
+
+}

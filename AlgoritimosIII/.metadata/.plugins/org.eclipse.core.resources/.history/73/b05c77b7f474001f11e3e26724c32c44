@@ -1,0 +1,19 @@
+package Aula9Colecoes;
+
+import javax.swing.JOptionPane;
+
+public class Teste {
+
+	public static void main(String[] args) {
+		VetorPessoa vetor = new VetorPessoa();
+		
+		do {
+		String nome = JOptionPane.showInputDialog("Insira o nome:");
+		vetor.adiciona(nome);
+		}while(JOptionPane.showConfirmDialog(null, "deseja cadastrar outra pessoa") == 0);
+		
+		JOptionPane.showMessageDialog(null, vetor);
+
+	}
+
+}

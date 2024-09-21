@@ -1,0 +1,20 @@
+INDEX VERSION 1.134+F:\Programaçao\bruno tads0\AlgoritimosIII\.metadata\.plugins\org.eclipse.jdt.core
+1408046949.index
+18857058.index
+2505569931.index
+3048963340.index
+3096824062.index
+2993851238.index
+3806940014.index
+2172782337.index
+1009196782.index
+3413270776.index
+2520355788.index
+2186569429.index
+3637246847.index
+3081157861.index
+1865797976.index
+1819738677.index
+4288118802.index
+1919658799.index
+2511291013.index

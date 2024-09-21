@@ -1,0 +1,109 @@
+package Aula9Interfaceis;
+
+import java.awt.*;
+import javax.swing.*;
+
+public class TesteJFrame extends JFrame {
+	JLabel lblNome, lblTelefone;
+	JTextField txtNome, txtTelefone;
+	JButton b1;
+
+	public TesteJFrame() {
+
+		setTitle("Primeira Janela Swing");// Titulo da janela
+		setSize(375, 1000);// tamanho da janela larg, alt
+		getContentPane().setLayout(null); // anula o layout padrao
+
+		// cor de fundo da janela RGB (Red Green Blue)
+		Color cor = JColorChooser.showDialog(null, "Escolha a cor de tela de fundo", getBackground());
+		getContentPane().setBackground(cor);
+
+		// provoca o termino da execução (encerra o programa)
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		lblNome = criarJLabel("Nome", 10, 10);
+		txtNome = CriarTxt(10, 50);
+
+		lblTelefone = criarJLabel("Telefone", 10, 90);
+		txtTelefone = CriarTxt(10, 130);
+
+		b1 = butao();
+		centralizar();
+		setVisible(true);
+	}
+
+	public static void main(String[] args) {
+		new TesteJFrame();
+	}
+
+	public void centralizar() {
+		// obtém a altura e largura da resolução vídeo
+		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+
+		// obtém a altura e largura da minha janela
+		Dimension janela = getSize();
+
+		if (janela.height > screen.height)
+			setSize(janela.width, screen.height);
+
+		if (janela.width > screen.width)
+			setSize(screen.width, janela.height);
+		setLocation((screen.width - janela.width) / 2, (screen.height - janela.height) / 2);
+		// resolução da minha janela
+		System.out.println("Largura de nossa janela: " + janela.width);
+		System.out.println("Altura de nossa janela: " + janela.height);
+
+		// resolução da TELA do computador
+		System.out.println("\nLargura de nossa TELA: " + screen.width);
+		System.out.println("Altura de nossa TELA: " + screen.height);
+	}
+
+	public JLabel criarJLabel(String texto, int distEsq, int distTopo) {
+		JLabel jl = new JLabel();
+		jl.setText(texto);
+		jl.setLocation(distEsq, distTopo);
+		jl.setSize(370, 50);
+		jl.setForeground(new Color(0, 0, 0));
+		jl.setFont(new Font("Courier new", Font.BOLD, 18));
+		jl.setToolTipText("Digite o " + texto);
+		add(jl); // adiciona o componente na tela
+		return jl;
+		// Torna opaco o fundo do rótulo
+//		jl.setOpaque(true);
+//		jl.setBackground(new Color(255,255,255));
+//		jl.setHorizontalAlignment(SwingConstants.LEFT);
+//		jl.setVerticalAlignment(SwingConstants.TOP);	
+	}
+
+	public JTextField CriarTxt(int dEsq, int dTopo) {
+		JTextField jt = new JTextField();
+		jt.setText("insere seu texto");
+		jt.setLocation(dEsq, dTopo);
+		jt.setSize(200, 30);
+		jt.setForeground(new Color(0, 0, 0));
+		jt.setFont(new Font("Courier new", Font.BOLD, 18));
+
+		// insere o JTextFiled na janela
+		add(jt);
+		return jt;
+	}
+
+	public JButton butao() {
+		JButton b1 = new JButton();
+
+		b1.setText("Gravar");
+
+		// 50 posicao x, 30 posicao y, 100 largura, 30 altura
+		b1.setBounds(50, 30, 100, 30);
+		b1.setBackground(new Color(0, 0, 170));
+		b1.setForeground(Color.yellow);
+		b1.setFont(new Font("Helvetica", Font.BOLD, 12));
+		b1.setToolTipText("Botao b1");
+		b1.setHorizontalAlignment(SwingConstants.CENTER);
+		b1.setVerticalAlignment(SwingConstants.CENTER);
+		b1.setEnabled(false);// botao desabilitado
+		b1.setMnemonic('G');// tecla de atalho
+		return b1;
+
+	}
+}

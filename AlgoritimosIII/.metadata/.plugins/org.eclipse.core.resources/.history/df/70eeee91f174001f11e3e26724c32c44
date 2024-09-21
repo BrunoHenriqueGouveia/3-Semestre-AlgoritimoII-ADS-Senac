@@ -1,0 +1,12 @@
+package Aula9Colecoes;
+
+public class VetorPessoa {
+	private String vetorPessoa[];
+
+	public VetorPessoa(String[] vetorPessoa) {
+		this.vetorPessoa = vetorPessoa;
+	}
+	
+	
+
+}
